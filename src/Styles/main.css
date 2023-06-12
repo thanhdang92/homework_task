@@ -1,0 +1,94 @@
+.main {
+    display: flex;
+    
+}
+
+.sideBar {
+    width: 310px;
+    background-color: orange;
+    text-align: center;
+}
+.sideBar ul {
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+.sideBar li {
+    height: 30px;
+    border-bottom: 3px solid rgb(102, 102, 102);
+    line-height: 30px;
+    font-size: 20px;
+    color: #505050;
+    cursor: pointer;
+}
+.sideBar li:hover {
+    color: #fff;
+}
+.taskContainer {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.taskItem {
+    border: 3px solid #675BF1;
+    border-radius: 5px;
+    width: 265px;
+    background-color: #fff;
+    margin: 10px 17px;
+    text-align: left;
+    padding: 0 15px;
+}
+.taskItem ul {
+    list-style: none;
+    border-bottom: 2px solid #675BF1;
+    padding: 0 0 10px 0;
+}
+.taskItem li {
+    line-height: 25px;
+}
+.taskItem p {
+
+}
+.form_createNewTask {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+.wrap-form {
+
+}
+.form-group {
+    margin: 10px 0;
+    display: flex;
+}
+.form-group label {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 20px;
+}
+.form-group input {
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.form-group input:focus {
+  outline: none;
+}
+.form-btnSave {
+    width: 150px;
+    height: 40px;
+    margin: 20px 0;
+}
+.form_createNewTask button {
+    margin-top: 30px;
+    width: 200px;
+}

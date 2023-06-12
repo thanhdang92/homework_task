@@ -1,0 +1,13 @@
+.create_newTask {
+    width: 250px;
+}
+.create_newTask button {
+    width: 200px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: aqua;
+    text-align: center;
+}
+.create_newTask button:hover {
+    background-color: antiquewhite;
+}
