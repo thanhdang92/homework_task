@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../Styles/createNewTask.css'
 const CreateNewTask = ({ isCreate, setIsCreate }) => {
 
@@ -8,7 +9,11 @@ const CreateNewTask = ({ isCreate, setIsCreate }) => {
     return (
         <>
             <div className="create_newTask">
-                <button onClick={() => handleClickNewTask()}>Create New Task</button>
+                <Link to='/create_new_task'>
+                    <button onClick={() => handleClickNewTask()}>
+                        Create New Task
+                    </button>
+                </Link>
             </div>
         </>
 
