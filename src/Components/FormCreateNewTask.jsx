@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import '../Styles/main.css'
 import Form from 'react-bootstrap/Form';
-const FormCreateNewTask = ({ setIsCreate, data, setData, dataTask, setDataTask }) => {
+import { createUniqueId } from './createUniqueId';
+import { useContext } from 'react';
+import { DataContext } from './DataContext';
+const FormCreateNewTask = () => {
+    const { setIsCreate, data, setData, dataTask, setDataTask } = useContext(DataContext);
     const [inputTitle, setInputTitle] = useState();
     const [inputCreator, setInputCreator] = useState();
     const [inputCreatedAt, setInputCreatedAt] = useState();
@@ -29,6 +33,7 @@ const FormCreateNewTask = ({ setIsCreate, data, setData, dataTask, setDataTask }
         setInputDesscription(e.target.value);
     }
     let itemTask = {
+        id: createUniqueId(),
         title: inputTitle,
         creator: inputCreator,
         status: selectStt,

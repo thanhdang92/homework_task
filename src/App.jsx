@@ -1,22 +1,21 @@
 import './App.css';
 import './Styles/topNav.css'
 import './Styles/homework.css'
-import { useEffect, useState } from 'react';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from './Components/Header';
 import Main from './Components/Main';
 import TopNav from './Components/TopNav';
+import { useContext } from 'react';
+import { DataContext } from './Components/DataContext';
 function App() {
-  const [data, setData] = useState([]);
-  const [dataTask, setDataTask] = useState([]);
-  const [isCreate, setIsCreate] = useState(true);
+  const { data, setData, setDataTask } = useContext(DataContext)
   useEffect(() => {
     const handleBeforeUnload = () => {
       // Lưu trữ dữ liệu vào localStorage trước khi trang được tải lại
       localStorage.setItem('myData', JSON.stringify(data));
     };
-
     window.addEventListener('beforeunload', handleBeforeUnload);
 
     return () => {
@@ -35,84 +34,30 @@ function App() {
       <div className="App">
         <TopNav />
         <div className="homework-app">
-          <Header
-            isCreate={isCreate}
-            setIsCreate={setIsCreate}
-          />
-          {/* <Main
-            isCreate={isCreate}
-            setIsCreate={setIsCreate}
-            data={data}
-            setData={setData}
-            dataTask={dataTask}
-            setDataTask={setDataTask}
-          /> */}
+          <Header />
           <Switch>
-            <Route path="/">
-              <Main
-                isCreate={isCreate}
-                setIsCreate={setIsCreate}
-                data={data}
-                setData={setData}
-                dataTask={dataTask}
-                setDataTask={setDataTask}
-              />
+            <Route path="/home">
+              <Main />
             </Route>
             <Route path="/all_task">
-              <Main
-                isCreate={isCreate}
-                setIsCreate={setIsCreate}
-                data={data}
-                setData={setData}
-                dataTask={dataTask}
-                setDataTask={setDataTask}
-              />
+              <Main />
             </Route>
             <Route path="/new_task">
-              <Main
-                isCreate={isCreate}
-                setIsCreate={setIsCreate}
-                data={data}
-                setData={setData}
-                dataTask={dataTask}
-                setDataTask={setDataTask}
-              />
+              <Main />
             </Route>
             <Route path="/doing_task">
-              <Main
-                isCreate={isCreate}
-                setIsCreate={setIsCreate}
-                data={data}
-                setData={setData}
-                dataTask={dataTask}
-                setDataTask={setDataTask}
-              />
+              <Main />
             </Route>
             <Route path="/done_task">
-              <Main
-                isCreate={isCreate}
-                setIsCreate={setIsCreate}
-                data={data}
-                setData={setData}
-                dataTask={dataTask}
-                setDataTask={setDataTask}
-              />
+              <Main />
             </Route>
             <Route path="/create_new_task">
-              <Main
-                isCreate={isCreate}
-                setIsCreate={setIsCreate}
-                data={data}
-                setData={setData}
-                dataTask={dataTask}
-                setDataTask={setDataTask}
-              />
+              <Main />
             </Route>
           </Switch>
         </div>
       </div>
     </BrowserRouter>
-
   );
 }
 

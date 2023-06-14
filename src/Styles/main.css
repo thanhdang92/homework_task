@@ -31,6 +31,8 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
+    max-height: 350px;
+    overflow-y: auto;
 }
 .taskItem {
     border: 3px solid #675BF1;

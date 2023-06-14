@@ -1,10 +1,12 @@
+import { useContext } from 'react'
 import '../Styles/main.css'
-const TaskItem = ({ dataTask }) => {
-
+import { DataContext } from './DataContext'
+const TaskItem = () => {
+    const { dataTask } = useContext(DataContext)
     return (
         <>
             {dataTask && dataTask.length > 0 &&
-                dataTask.map((item, index) => {
+                dataTask.map((item) => {
                     let styleStt = {}
                     if (item.status === "New") {
                         styleStt = {
@@ -22,7 +24,7 @@ const TaskItem = ({ dataTask }) => {
                         }
                     }
                     return (
-                        <div className="taskItem" key={index}>
+                        <div className="taskItem" key={item.id}>
                             <ul>
                                 <li><b>Title:{item.title}</b> </li>
                                 <li>Creator:{item.creator}</li>

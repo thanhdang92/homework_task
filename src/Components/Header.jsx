@@ -1,13 +1,10 @@
 import '../Styles/header.css'
 import CreateNewTask from "./CreateNewTask";
 import Search from "./Search";
-const Header = ({ isCreate, setIsCreate }) => {
+const Header = () => {
     return (
         <div className="header">
-            <CreateNewTask
-                isCreate={isCreate}
-                setIsCreate={setIsCreate}
-            />
+            <CreateNewTask />
             <Search />
         </div>
     )

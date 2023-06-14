@@ -1,12 +1,13 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/main.css'
-const SideBar = ({ setIsCreate, data, setDataTask }) => {
+import { DataContext } from './DataContext';
+const SideBar = () => {
+    const { data, setDataTask } = useContext(DataContext);
     let sttNew = data.filter(item => item.status === "New");
     let sttDoing = data.filter(item => item.status === "Doing");
     let sttDone = data.filter(item => item.status === "Done");
-
-
-
+    const { setIsCreate } = useContext(DataContext)
     const handleClickAllTask = () => {
         setDataTask(data)
         setIsCreate(true)

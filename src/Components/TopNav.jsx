@@ -4,7 +4,7 @@ const TopNav = () => {
     return (
         <>
             <div className="topnav">
-                <Link className="active" to='/'>Home</Link>
+                <Link className="active" to='/home'>Home</Link>
                 <Link to='/all_task'>All Task</Link>
                 <Link to='/new_task'>New Task</Link>
                 <Link to='/doing_task'>Doing Task</Link>

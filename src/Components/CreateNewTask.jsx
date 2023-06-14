@@ -1,7 +1,9 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import '../Styles/createNewTask.css'
-const CreateNewTask = ({ isCreate, setIsCreate }) => {
-
+import { DataContext } from './DataContext'
+const CreateNewTask = () => {
+    const { setIsCreate } = useContext(DataContext)
     const handleClickNewTask = () => {
         setIsCreate(false)
     }

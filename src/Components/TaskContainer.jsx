@@ -3,7 +3,10 @@ import TaskItem from "./TaskItem";
 import FormCreateNewTask from './FormCreateNewTask';
 import { useLocation } from 'react-router';
 import { useEffect } from 'react';
-const TaskContainer = ({ isCreate, setIsCreate, data, setData, dataTask, setDataTask }) => {
+import { useContext } from 'react';
+import { DataContext } from './DataContext';
+const TaskContainer = () => {
+    const { isCreate, setIsCreate, data, setData, dataTask, setDataTask } = useContext(DataContext)
     const location = useLocation();
     const pathname = location.pathname;
     const value = pathname.substring();
@@ -11,7 +14,7 @@ const TaskContainer = ({ isCreate, setIsCreate, data, setData, dataTask, setData
         let newStt = data.filter(item => item.status === "New");
         let doingStt = data.filter(item => item.status === "Doing");
         let doneStt = data.filter(item => item.status === "Done");
-        if (value === "/") {
+        if (value === "/home") {
             setDataTask(data);
             setIsCreate(true);
             return;
@@ -42,8 +45,7 @@ const TaskContainer = ({ isCreate, setIsCreate, data, setData, dataTask, setData
             setIsCreate(false);
         }
         if (value === "/reset_data") {
-            setData([]);
-            setDataTask([]);
+            localStorage.removeItem('myData')
             return;
         }
     }, [value])
